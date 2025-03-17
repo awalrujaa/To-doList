@@ -11,6 +11,7 @@ public class Main{
         while (true) {
             System.out.println("""
                     \nTo-do List
+                    Enter your choice below:
                     *****************
                     """);
             System.out.println("1. Add a task.");
@@ -19,12 +20,14 @@ public class Main{
             System.out.println("4. Remove all tasks.");
             System.out.println("5. Update a task.\n");
 
+            // myObj.nextLine() call gets skipped after the myObj.nextInt() call
+            // Therefore, we parse the integer from the string input
+            // so myObj.nextLine() doesn't get skipped.
             int num = Integer.parseInt(myObj.nextLine());
 
             switch (num) {
                 case 1:
-                    String taskName = myObj.nextLine();
-                    todo.addTask(taskName);
+                    todo.addTask();
                     break;
 
                 case 2:
@@ -32,8 +35,7 @@ public class Main{
                     break;
 
                 case 3:
-                    int removeTask = myObj.nextInt();
-                    todo.deleteTask(removeTask);
+                    todo.deleteTask();
                     break;
 
                 case 4:
@@ -41,12 +43,7 @@ public class Main{
                     break;
 
                 case 5:
-                    System.out.println("Enter the number of task to update.");
-                    int taskNum = Integer.parseInt(myObj.nextLine());
-                    System.out.println("Enter the updated task.");
-                    String updatedTask = myObj.nextLine();
-
-                    todo.updateTask(taskNum, updatedTask);
+                    todo.updateTask();
                     break;
 
                 default:
