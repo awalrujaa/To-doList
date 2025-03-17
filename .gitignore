@@ -1,4 +1,7 @@
-### IntelliJ IDEA ###
+# Ignore all .class files
+*.class
+
+ IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
