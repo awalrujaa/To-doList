@@ -35,11 +35,14 @@ public class ToDoList {
             return;
         }
         System.out.println("Enter which task you want to delete.");
-        int removeTask = Integer.parseInt(scanner.nextLine());
-
-        if (removeTask > 0 & removeTask <= tasks.size()){
-            tasks.remove(removeTask-1); // i-1 as the user thinks of 1-based array indexing
-            System.out.println("Removed element " + removeTask);
+        int removeTaskIndex = Integer.parseInt(scanner.nextLine());
+        if (removeTaskIndex<=0){
+            System.out.println("invalid index for task");
+            return;
+        }
+        if (removeTaskIndex > 0 & removeTaskIndex <= tasks.size()){
+            tasks.remove(removeTaskIndex-1); // i-1 as the user thinks of 1-based array indexing
+            System.out.println("Removed element " + removeTaskIndex);
         }
         else {
             System.out.println("The task doesn't exist.");

@@ -7,8 +7,9 @@ public class Main{
         ToDoList todo = new ToDoList();
 
         Scanner myObj = new Scanner(System.in);
-
-        while (true) {
+        boolean notExit = true;
+        
+        while (notExit) {
             System.out.println("""
                     \nTo-do List
                     Enter your choice below:
@@ -18,7 +19,8 @@ public class Main{
             System.out.println("2. View all tasks.");
             System.out.println("3. Remove a task.");
             System.out.println("4. Remove all tasks.");
-            System.out.println("5. Update a task.\n");
+            System.out.println("5. Update a task.");
+            System.out.println("6. Exit.\n");
 
             // myObj.nextLine() call gets skipped after the myObj.nextInt() call
             // Therefore, we parse the integer from the string input
@@ -44,6 +46,9 @@ public class Main{
 
                 case 5:
                     todo.updateTask();
+                    break;
+                case 6:
+                    notExit=false;
                     break;
 
                 default:
